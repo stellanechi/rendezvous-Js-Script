@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RENDEZVOUS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- hero section -->
+    <section>
+      <div
+        class="min-h-screen relative overflow-hidden bg-[url('../rendeezvous-js/image/bg-image.png')] bg-cover bg-center bg-no-repeat"
+      >
+        <!-- Background Overlay -->
+        <!-- <div class="absolute inset-0 bg-black bg-opacity-30"></div> -->
+
+        <!-- Stage Lights Effect -->
+        <div
+          class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent opacity-20 pointer-events-none"
+        ></div>
+        <div
+          class="absolute top-20 left-1/4 w-2 h-40 bg-white opacity-30 transform -skew-x-12 blur-sm"
+        ></div>
+        <div
+          class="absolute top-20 left-1/3 w-2 h-40 bg-white opacity-25 transform -skew-x-12 blur-sm"
+        ></div>
+        <div
+          class="absolute top-20 right-1/3 w-2 h-40 bg-white opacity-25 transform skew-x-12 blur-sm"
+        ></div>
+        <div
+          class="absolute top-20 right-1/4 w-2 h-40 bg-white opacity-30 transform skew-x-12 blur-sm"
+        ></div>
+
+        <!-- Navigation -->
+        <nav class="relative z-20 px-6 pt-6">
+          <div class="max-w-6xl mx-auto">
+            <div
+              class="bg-white bg-opacity-90 backdrop-blur-md rounded-full px-8 py-4 shadow-xl border border-white border-opacity-20"
+            >
+              <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-gray-800">rendezvous</div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                  <a
+                    href="#"
+                    class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium"
+                    >Discover</a
+                  >
+                  <a
+                    href="#"
+                    class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium"
+                    >About us</a
+                  >
+                  <a
+                    href="#"
+                    class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium"
+                    >FAQs</a
+                  >
+                  <a
+                    href="#"
+                    class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium"
+                    >Contact us</a
+                  >
+                </div>
+
+                <!-- Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                  <button
+                    class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200"
+                  >
+                    Log In
+                  </button>
+                  <button
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-medium transition-colors duration-200 shadow-lg"
+                  >
+                    Sign up
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div
+          class="relative z-10 flex items-center justify-center min-h-screen px-6 pt-20"
+        >
+          <div
+            class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <!-- Left Content -->
+            <div class="text-white space-y-8">
+              <p class="text-2xl md:text-3xl lg:text-3xl font-bold">
+                Ready to Rock? Discover the
+                <span>Hottest Events</span>
+                Here – Your Calendar's New Best Friend!
+              </p>
+            </div>
+
+            <!-- Right Content - Search Box -->
+            <div class="lg:ml-auto w-full max-w-md">
+              <div
+                class="bg-white bg-opacity-95 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-white border-opacity-40"
+              >
+                <!-- Search Input -->
+                <div class="relative mb-4">
+                  <div
+                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search for an event"
+                    class="w-full pl-12 pr-4 py-3 bg-white bg-opacity-80 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 placeholder-gray-500 transition-all duration-200"
+                  />
+                </div>
+
+                <!-- Categories Dropdown -->
+                <div class="relative mb-6">
+                  <select
+                    class="w-full px-4 py-3 bg-white bg-opacity-80 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 appearance-none cursor-pointer transition-all duration-200"
+                  >
+                    <option>Categories</option>
+                    <option>Concerts</option>
+                    <option>Sports</option>
+                    <option>Theater</option>
+                    <option>Comedy</option>
+                    <option>Festivals</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Search Button -->
+                <button
+                  class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crowd Silhouette Effect -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black from-opacity-60 to-transparent"
+        ></div>
+        <div class="absolute bottom-0 left-0 w-full h-20 overflow-hidden">
+          <!-- Crowd silhouette using CSS shapes -->
+          <div
+            class="absolute bottom-0 left-0 w-8 h-12 bg-black opacity-60 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-6 w-6 h-16 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-10 w-7 h-14 bg-black opacity-55 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-16 w-5 h-18 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-20 w-8 h-12 bg-black opacity-60 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-26 w-6 h-16 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-32 w-7 h-14 bg-black opacity-55 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-36 w-5 h-18 bg-black opacity-50 rounded-t-full"
+          ></div>
+
+          <!-- Repeat pattern across screen -->
+          <div
+            class="absolute bottom-0 right-0 w-8 h-12 bg-black opacity-60 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-6 w-6 h-16 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-10 w-7 h-14 bg-black opacity-55 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-16 w-5 h-18 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-20 w-8 h-12 bg-black opacity-60 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-26 w-6 h-16 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-32 w-7 h-14 bg-black opacity-55 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 right-36 w-5 h-18 bg-black opacity-50 rounded-t-full"
+          ></div>
+
+          <!-- Center crowd -->
+          <div
+            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-16 bg-black opacity-60 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-1/2 transform -translate-x-6 w-6 h-14 bg-black opacity-50 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-1/2 transform translate-x-2 w-7 h-18 bg-black opacity-55 rounded-t-full"
+          ></div>
+          <div
+            class="absolute bottom-0 left-1/2 transform translate-x-8 w-5 h-12 bg-black opacity-50 rounded-t-full"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub heading  -->
+    <div class="flex flex-row justify-between items-center px-16 pt-16 pb-4">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900">Trending events</h2>
+      </div>
+      <div class="flex items-center cursor-pointer">
+        <p class="text-gray-600 text-sm mr-2">View all trending events</p>
+        <img
+          src="../rendeezvous-js/image/Arrow--up-right.png"
+          alt="top arrow"
+        />
+      </div>
+    </div>
+
+    <!-- Card section -->
+    <div class="flex flex-row overflow-x-auto pl-10 pr-10">
+      <section class="pl-8 pt-16">
+        <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+          <div
+            class="relative bg-orange-500 h-48 flex items-center justify-center"
+          >
+            <!-- Images -->
+            <div class="">
+              <img
+                src="../rendeezvous-js/image/card-one-image.png"
+                alt="person 1"
+                class=""
+              />
+            </div>
+          </div>
+
+          <!-- Text Section -->
+          <div class="p-5">
+            <h2 class="text-lg font-semibold">ISWIS Live show</h2>
+            <p class="text-sm text-gray-600">Sun, Oct 3rd • 6pm</p>
+            <p class="mt-2 text-sm text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <div class="flex items-center gap-2 mt-3 cursor-pointer">
+              <a
+                href="#"
+                class="inline-block text-sm font-medium text-indigo-600 hover:underline"
+                >View details
+              </a>
+              <img
+                src="../rendeezvous-js/image/Arrow--up-right.png"
+                alt="top arrow"
+                class="text-indigo-600"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Card two -->
+      <section class="pl-8 pt-16">
+        <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+          <div
+            class="relative bg-orange-500 h-48 flex items-center justify-center"
+          >
+            <!-- Images -->
+            <div class="">
+              <img
+                src="../rendeezvous-js/image/card-two.png"
+                alt="person 1"
+                class=""
+              />
+            </div>
+          </div>
+
+          <!-- Text Section -->
+          <div class="p-5">
+            <h2 class="text-lg font-semibold">ISWIS Live show</h2>
+            <p class="text-sm text-gray-600">Sun, Oct 3rd • 6pm</p>
+            <p class="mt-2 text-sm text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <div class="flex items-center gap-2 mt-3 cursor-pointer">
+              <a
+                href="#"
+                class="inline-block text-sm font-medium text-indigo-600 hover:underline"
+                >View details
+              </a>
+              <img
+                src="../rendeezvous-js/image/Arrow--up-right.png"
+                alt="top arrow"
+                class="text-indigo-600"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Crad three -->
+      <section class="pl-8 pt-16">
+        <div class="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
+          <div
+            class="relative bg-orange-500 h-48 flex items-center justify-center"
+          >
+            <!-- Images -->
+            <div class="">
+              <img
+                src="../rendeezvous-js/image/card-three.png"
+                alt="person 1"
+                class=""
+              />
+            </div>
+          </div>
+
+          <!-- Text Section -->
+          <div class="p-5">
+            <h2 class="text-lg font-semibold">ISWIS Live show</h2>
+            <p class="text-sm text-gray-600">Sun, Oct 3rd • 6pm</p>
+            <p class="mt-2 text-sm text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <div class="flex items-center gap-2 mt-3 cursor-pointer">
+              <a
+                href="#"
+                class="inline-block text-sm font-medium text-indigo-600 hover:underline"
+                >View details
+              </a>
+              <img
+                src="../rendeezvous-js/image/Arrow--up-right.png"
+                alt="top arrow"
+                class="text-indigo-600"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="flex flex-row px-16 py-36">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900">
+          Discover a World of Events Tailored Just for You.
+        </h2>
+
+        <button class="mt-10">
+          <a
+            href="https://rendeezvous-js.netlify.app/"
+            class="m-4 p-2 bg-[#783EAD] text-white rounded hover:bg-blue-600 transition"
+            >Go to Rendeezvous</a
+          >
+        </button>
+      </div>
+      <div class="flex flex-row gap-4">
+        <div class="relative">
+          <img
+            src="../rendeezvous-js/image//online-event.png"
+            alt="online event"
+            class="w-[800px] h-[240px] top-[127px] left-[509px]"
+          />
+          <h2
+            class="absolute text-2xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            Online Events
+          </h2>
+        </div>
+        <div>
+          <img
+            src="../rendeezvous-js/image/physical-event.png"
+            alt="physical event"
+          />
+        </div>
+        <div>
+          <img
+            src="../rendeezvous-js/image/hybrid-event.png"
+            alt="hybrid event"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="text-white py-16 px-8 bg-[#432361]">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap">
+          <!-- Brand Section -->
+          <div class="w-full md:w-2/5 pr-8 mb-8 md:mb-0">
+            <h2 class="text-3xl font-[400] mb-4">rendezvous</h2>
+            <p class="text-white opacity-80 text-base leading-relaxed max-w-sm">
+              Your Personal Event Sherpa. Curating<br />
+              Awesome, One Click at a Time.
+            </p>
+          </div>
+
+          <!-- Links Section -->
+          <div class="w-full md:w-3/5 flex flex-wrap">
+            <!-- Feature Column -->
+            <div class="w-full sm:w-1/3 mb-8 sm:mb-0">
+              <h3 class="font-medium text-lg mb-6">Feature</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white opacity-80 hover:opacity-100 transition-opacity duration-200 text-base"
+                    >Events discovery</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white opacity-80 hover:opacity-100 transition-opacity duration-200 text-base"
+                    >Ticketing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="w-full sm:w-1/3 mb-8 sm:mb-0">
+              <h3 class="font-medium text-lg mb-6">Company</h3>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-white opacity-80 hover:opacity-100 transition-opacity duration-200 text-base"
+                    >About us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white opacity-80 hover:opacity-100 transition-opacity duration-200 text-base"
+                    >FAQs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white opacity-80 hover:opacity-100 transition-opacity duration-200 text-base"
+                    >Careers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white opacity-80 hover:opacity-100 transition-opacity duration-200 text-base"
+                    >Support</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="w-full sm:w-1/3">
+              <h3 class="font-medium text-lg mb-6">Contact us</h3>
+              <div class="space-y-3">
+                <p class="text-white opacity-80 text-base">
+                  <a
+                    href="mailto:info@events.com"
+                    class="hover:opacity-100 transition-opacity duration-200"
+                    >info@events.com</a
+                  >
+                </p>
+                <p class="text-white opacity-80 text-base">+234 701 345 6789</p>
+                <p class="text-white opacity-80 text-base leading-relaxed">
+                  Rece Course, 8/9 Marina,<br />
+                  Owuani, Lagos Lagos, Ado Force<br />
+                  Rd, Lagos Island 102273, Lagos
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
