@@ -115,5 +115,48 @@ const createEventContainer = (event) => {
 createEventContainer(eventData[0]);
 createEventContainer(eventData[1]);
 createEventContainer(eventData[2]);
-// createEventContainer();
-// createEventContainer();
+
+// Class creation 24/09/2025
+
+class myProduct {
+  constructor(id, title, price, description, category, image) {
+    this.id = id;
+    this.title = title;
+    this.price = price;
+    this.description = description;
+    this.category = category;
+    this.image = image;
+  }
+  getProductDetails() {
+    return `
+      ID: ${this.id}
+      Title: ${this.title}
+      Price: $${this.price}
+      Description: ${this.description}
+      Category: ${this.category}
+      Image: ${this.image}
+    `;
+  }
+}
+const productInformation = new myProduct(
+  1,
+  "Cosmetics",
+  10.99,
+  "Natural cosmetic product",
+  "Cosmetics",
+  "../rendeezvous-js/image/card-one-image.png"
+);
+
+console.log(productInformation.getProductDetails());
+
+// Class with a method
+
+class productService {
+  constructor() {
+    this.products = [];
+  }
+
+  addProduct(product) {
+    this.products.push(product);
+  }
+}
