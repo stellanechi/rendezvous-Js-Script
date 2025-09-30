@@ -6,4 +6,7 @@ export default class ProductManager {
     this.price = price;
     this.imageUrl = imageUrl;
   }
+  getSummary() {
+    return `${this.name}: $${this.price}`;
+  }
 }
