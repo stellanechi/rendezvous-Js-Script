@@ -268,13 +268,22 @@ class ProductService {
       (item) => new Product(item)
     );
   }
+
+  async getProductById(id) {
+    const response = await fetch(`${this.baseUrl}/${id}`);
+    const data = await response.json();
+    return new Product(data);
+  }
 }
 
 const productService = new ProductService();
 
 function createEventContainer(product, targetElement) {
   const section = document.createElement("section");
-  section.className = "pl-8 pt-16";
+  section.addEventListener("click", () => {
+    window.location.href = "DetailsPage.html?productId=${product.id}";
+  });
+  section.className = "pl-8 pt-16 cursor-pointer";
 
   const cardDiv = document.createElement("div");
   cardDiv.className =
