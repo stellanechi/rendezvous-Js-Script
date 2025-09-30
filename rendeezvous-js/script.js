@@ -313,7 +313,7 @@ function createEventContainer(product, targetElement) {
 }
 
 async function renderProducts() {
-  const products = await productService.getProducts(2);
+  const products = await productService.getProducts(4);
   console.log("Products loaded:", products);
   const targetElement = document.getElementById("event-container");
   targetElement.innerHTML = "";
