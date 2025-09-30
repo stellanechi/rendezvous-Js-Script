@@ -1,4 +1,4 @@
-export default class paymentClass {
+export default class PaymentManager {
   constructor({ id, name, description, price, imageUrl }) {
     this.id = id;
     this.name = name;

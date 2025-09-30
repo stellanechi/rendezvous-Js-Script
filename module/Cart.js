@@ -1,4 +1,4 @@
-export default class cartClass {
+export default class CartManager {
   constructor({ id, name, description, price, imageUrl }) {
     this.id = id;
     this.name = name;
