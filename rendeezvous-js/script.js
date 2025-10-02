@@ -278,44 +278,90 @@ class ProductService {
 
 const productService = new ProductService();
 
-function createEventContainer(product, targetElement) {
-  const section = document.createElement("section");
-  section.addEventListener("click", () => {
-    window.location.href = "DetailsPage.html?productId=${product.id}";
-  });
-  section.className = "pl-8 pt-16 cursor-pointer";
+// function createEventContainer(product, targetElement) {
+//   const section = document.createElement("section");
+//   section.addEventListener("click", () => {
+//     window.location.href = `DetailsPage.html?productId=${product.id}`;
+//   });
+//   section.className = "pl-8 pt-16 cursor-pointer";
 
+//   const cardDiv = document.createElement("div");
+//   cardDiv.className =
+//     "flex-shrink-0 w-[40%] bg-white rounded-xl shadow-md overflow-hidden";
+
+//   const imageContainer = document.createElement("div");
+//   imageContainer.className =
+//     "relative bg-orange-500 h-48 flex items-center justify-center";
+
+//   const img = document.createElement("img");
+//   img.src = product.image;
+//   img.alt = product.title;
+//   img.className = "max-h-full object-contain";
+//   imageContainer.appendChild(img);
+
+//   const contentDiv = document.createElement("div");
+//   contentDiv.className = "p-5";
+
+//   const title = document.createElement("h2");
+//   title.className = "text-lg font-semibold";
+//   title.textContent = product.title;
+
+//   const pricePara = document.createElement("p");
+//   pricePara.className = "text-sm text-gray-600";
+//   pricePara.textContent = `$${product.price}`;
+
+//   const descPara = document.createElement("p");
+//   descPara.className = "mt-2 text-sm text-gray-700 line-clamp-3";
+//   descPara.textContent = product.description;
+
+//   contentDiv.append(title, pricePara, descPara);
+
+//   cardDiv.append(imageContainer, contentDiv);
+//   section.appendChild(cardDiv);
+//   targetElement.appendChild(section);
+// }
+function createEventContainer(product, targetElement) {
+  // Parent section wrapper
+  const section = document.createElement("section");
+  section.className =
+    "p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 cursor-pointer";
+  section.addEventListener("click", () => {
+    window.location.href = `DetailsPage.html?productId=${product.id}`;
+  });
+
+  // Card container
   const cardDiv = document.createElement("div");
   cardDiv.className =
-    "flex-shrink-0 w-[40%] bg-white rounded-xl shadow-md overflow-hidden";
+    "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300";
 
+  // Image section
   const imageContainer = document.createElement("div");
   imageContainer.className =
-    "relative bg-orange-500 h-48 flex items-center justify-center";
+    "bg-gray-200 h-48 flex items-center justify-center";
 
   const img = document.createElement("img");
   img.src = product.image;
   img.alt = product.title;
-  img.className = "max-h-full object-contain";
+  img.className = "h-full object-contain";
   imageContainer.appendChild(img);
 
+  // Text section
   const contentDiv = document.createElement("div");
-  contentDiv.className = "p-5";
+  contentDiv.className = "p-4";
 
   const title = document.createElement("h2");
-  title.className = "text-lg font-semibold";
+  title.className = "text-base font-semibold text-gray-900 mb-1 line-clamp-2";
   title.textContent = product.title;
 
   const pricePara = document.createElement("p");
-  pricePara.className = "text-sm text-gray-600";
+  pricePara.className = "text-sm text-gray-600 mb-1";
   pricePara.textContent = `$${product.price}`;
 
   const descPara = document.createElement("p");
-  descPara.className = "mt-2 text-sm text-gray-700 line-clamp-3";
+  descPara.className = "text-sm text-gray-700 line-clamp-3";
   descPara.textContent = product.description;
 
   contentDiv.append(title, pricePara, descPara);
-
   cardDiv.append(imageContainer, contentDiv);
   section.appendChild(cardDiv);
   targetElement.appendChild(section);
