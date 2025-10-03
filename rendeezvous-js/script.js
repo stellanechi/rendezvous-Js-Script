@@ -247,6 +247,137 @@
 //   targetElement.appendChild(section);
 // };
 
+// class Product {
+//   constructor({ id, title, price, category, description, image }) {
+//     this.id = id;
+//     this.title = title;
+//     this.price = price;
+//     this.category = category;
+//     this.description = description;
+//     this.image = image;
+//   }
+// }
+
+// class ProductService {
+//   baseUrl = "https://fakestoreapi.com/products";
+
+//   async getProducts(limit = null) {
+//     const response = await fetch(this.baseUrl);
+//     const data = await response.json();
+//     return (limit ? data.slice(0, limit) : data).map(
+//       (item) => new Product(item)
+//     );
+//   }
+
+//   async getProductById(id) {
+//     const response = await fetch(`${this.baseUrl}/${id}`);
+//     const data = await response.json();
+//     return new Product(data);
+//   }
+// }
+
+// const productService = new ProductService();
+
+// // function createEventContainer(product, targetElement) {
+// //   const section = document.createElement("section");
+// //   section.addEventListener("click", () => {
+// //     window.location.href = `DetailsPage.html?productId=${product.id}`;
+// //   });
+// //   section.className = "pl-8 pt-16 cursor-pointer";
+
+// //   const cardDiv = document.createElement("div");
+// //   cardDiv.className =
+// //     "flex-shrink-0 w-[40%] bg-white rounded-xl shadow-md overflow-hidden";
+
+// //   const imageContainer = document.createElement("div");
+// //   imageContainer.className =
+// //     "relative bg-orange-500 h-48 flex items-center justify-center";
+
+// //   const img = document.createElement("img");
+// //   img.src = product.image;
+// //   img.alt = product.title;
+// //   img.className = "max-h-full object-contain";
+// //   imageContainer.appendChild(img);
+
+// //   const contentDiv = document.createElement("div");
+// //   contentDiv.className = "p-5";
+
+// //   const title = document.createElement("h2");
+// //   title.className = "text-lg font-semibold";
+// //   title.textContent = product.title;
+
+// //   const pricePara = document.createElement("p");
+// //   pricePara.className = "text-sm text-gray-600";
+// //   pricePara.textContent = `$${product.price}`;
+
+// //   const descPara = document.createElement("p");
+// //   descPara.className = "mt-2 text-sm text-gray-700 line-clamp-3";
+// //   descPara.textContent = product.description;
+
+// //   contentDiv.append(title, pricePara, descPara);
+
+// //   cardDiv.append(imageContainer, contentDiv);
+// //   section.appendChild(cardDiv);
+// //   targetElement.appendChild(section);
+// // }
+// function createEventContainer(product, targetElement) {
+//   // Parent section wrapper
+//   const section = document.createElement("section");
+//   section.className =
+//     "p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 cursor-pointer";
+//   section.addEventListener("click", () => {
+//     window.location.href = `DetailsPage.html?productId=${product.id}`;
+//   });
+
+//   // Card container
+//   const cardDiv = document.createElement("div");
+//   cardDiv.className =
+//     "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300";
+
+//   // Image section
+//   const imageContainer = document.createElement("div");
+//   imageContainer.className =
+//     "bg-gray-200 h-58 flex items-center justify-center";
+
+//   const img = document.createElement("img");
+//   img.src = product.image;
+//   img.alt = product.title;
+//   img.className = "h-full object-contain";
+//   imageContainer.appendChild(img);
+
+//   // Text section
+//   const contentDiv = document.createElement("div");
+//   contentDiv.className = "p-4";
+
+//   const title = document.createElement("h2");
+//   title.className = "text-base font-semibold text-gray-900 mb-1 line-clamp-2";
+//   title.textContent = product.title;
+
+//   const pricePara = document.createElement("p");
+//   pricePara.className = "text-sm text-gray-600 mb-1";
+//   pricePara.textContent = `$${product.price}`;
+
+//   const descPara = document.createElement("p");
+//   descPara.className = "text-sm text-gray-700 line-clamp-3";
+//   descPara.textContent = product.description;
+
+//   contentDiv.append(title, pricePara, descPara);
+//   cardDiv.append(imageContainer, contentDiv);
+//   section.appendChild(cardDiv);
+//   targetElement.appendChild(section);
+// }
+
+// async function renderProducts() {
+//   const products = await productService.getProducts();
+//   console.log("Products loaded:", products);
+//   const targetElement = document.getElementById("event-container");
+//   targetElement.innerHTML = "";
+//   products.forEach((product) => createEventContainer(product, targetElement));
+// }
+
+// renderProducts();
+
+// Exercise 25th September 2024
 class Product {
   constructor({ id, title, price, category, description, image }) {
     this.id = id;
@@ -278,53 +409,10 @@ class ProductService {
 
 const productService = new ProductService();
 
-// function createEventContainer(product, targetElement) {
-//   const section = document.createElement("section");
-//   section.addEventListener("click", () => {
-//     window.location.href = `DetailsPage.html?productId=${product.id}`;
-//   });
-//   section.className = "pl-8 pt-16 cursor-pointer";
-
-//   const cardDiv = document.createElement("div");
-//   cardDiv.className =
-//     "flex-shrink-0 w-[40%] bg-white rounded-xl shadow-md overflow-hidden";
-
-//   const imageContainer = document.createElement("div");
-//   imageContainer.className =
-//     "relative bg-orange-500 h-48 flex items-center justify-center";
-
-//   const img = document.createElement("img");
-//   img.src = product.image;
-//   img.alt = product.title;
-//   img.className = "max-h-full object-contain";
-//   imageContainer.appendChild(img);
-
-//   const contentDiv = document.createElement("div");
-//   contentDiv.className = "p-5";
-
-//   const title = document.createElement("h2");
-//   title.className = "text-lg font-semibold";
-//   title.textContent = product.title;
-
-//   const pricePara = document.createElement("p");
-//   pricePara.className = "text-sm text-gray-600";
-//   pricePara.textContent = `$${product.price}`;
-
-//   const descPara = document.createElement("p");
-//   descPara.className = "mt-2 text-sm text-gray-700 line-clamp-3";
-//   descPara.textContent = product.description;
-
-//   contentDiv.append(title, pricePara, descPara);
-
-//   cardDiv.append(imageContainer, contentDiv);
-//   section.appendChild(cardDiv);
-//   targetElement.appendChild(section);
-// }
 function createEventContainer(product, targetElement) {
-  // Parent section wrapper
+  //  section wrapper
   const section = document.createElement("section");
-  section.className =
-    "p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 cursor-pointer";
+  section.className = "cursor-pointer p-4";
   section.addEventListener("click", () => {
     window.location.href = `DetailsPage.html?productId=${product.id}`;
   });
@@ -332,22 +420,22 @@ function createEventContainer(product, targetElement) {
   // Card container
   const cardDiv = document.createElement("div");
   cardDiv.className =
-    "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300";
+    "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col";
 
   // Image section
   const imageContainer = document.createElement("div");
   imageContainer.className =
-    "bg-gray-200 h-48 flex items-center justify-center";
+    "bg-gray-100 h-56 flex items-center justify-center";
 
   const img = document.createElement("img");
   img.src = product.image;
   img.alt = product.title;
-  img.className = "h-full object-contain";
+  img.className = "max-h-full object-contain";
   imageContainer.appendChild(img);
 
   // Text section
   const contentDiv = document.createElement("div");
-  contentDiv.className = "p-4";
+  contentDiv.className = "p-4 flex flex-col flex-grow";
 
   const title = document.createElement("h2");
   title.className = "text-base font-semibold text-gray-900 mb-1 line-clamp-2";
@@ -358,7 +446,7 @@ function createEventContainer(product, targetElement) {
   pricePara.textContent = `$${product.price}`;
 
   const descPara = document.createElement("p");
-  descPara.className = "text-sm text-gray-700 line-clamp-3";
+  descPara.className = "text-sm text-gray-700 line-clamp-3 mt-2";
   descPara.textContent = product.description;
 
   contentDiv.append(title, pricePara, descPara);
@@ -368,9 +456,14 @@ function createEventContainer(product, targetElement) {
 }
 
 async function renderProducts() {
-  const products = await productService.getProducts(4);
+  const products = await productService.getProducts();
   console.log("Products loaded:", products);
+
   const targetElement = document.getElementById("event-container");
+
+  targetElement.className =
+    "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6";
+
   targetElement.innerHTML = "";
   products.forEach((product) => createEventContainer(product, targetElement));
 }

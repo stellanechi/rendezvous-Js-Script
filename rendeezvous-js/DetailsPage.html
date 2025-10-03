@@ -19,6 +19,7 @@
   </head>
   <body class="bg-gray-50 min-h-screen">
     <script src="./DetailsPage.js" defer type="module"></script>
+
     <!-- Header -->
     <header class="bg-white shadow-sm">
       <div class="max-w-6xl mx-auto px-4 py-4">
@@ -53,18 +54,22 @@
       <!-- Event Card -->
       <div class="bg-white rounded-xl shadow-sm overflow-hidden">
         <!-- Hero Image -->
-        <div class="relative h-90 bg-gray-200">
+        <div id="product-details" class="relative h-90 bg-gray-200"></div>
+        <!-- <div class="relative h-90 bg-gray-200">
           <img
             src="../rendeezvous-js/image/Details-hero-image.png"
             alt="I said what I said Live Show"
             class="w-full h-full object-cover"
           />
-        </div>
+        </div> -->
 
         <!-- Event Details -->
         <div class="p-8">
-          <h1 class="text-2xl font-semibold text-gray-900 mb-6">
-            I said what I said Live Show
+          <h1
+            id="product-title"
+            class="text-2xl font-semibold text-gray-900 mb-6"
+          >
+            <!-- I said what I said Live Show -->
           </h1>
 
           <div class="space-y-4">
@@ -212,8 +217,8 @@
                 Event description
               </h2>
               <div class="leading-relaxed space-y-4">
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                <p id="product-description">
+                  <!-- Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium, totam rem aperiam, eaque
                   ipsa quae ab illo inventore veritatis et quasi architecto
                   beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
@@ -226,7 +231,7 @@
                   ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
                   commodi consequatur. Quis autem vel eum iure reprehenderit qui
                   in ea voluptate velit esse quam nihil molestiae consequatur,
-                  vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                  vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? -->
                 </p>
               </div>
 
@@ -241,8 +246,11 @@
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">
                       Single
                     </h4>
-                    <p class="text-2xl font-bold text-custom-purple">
-                      NGN 5,000
+                    <p
+                      id="product-price"
+                      class="text-2xl font-bold text-custom-purple"
+                    >
+                      <!-- NGN 5,000 -->
                     </p>
                   </div>
                   <div class="flex-1">
